@@ -134,7 +134,7 @@ function OpenCloakroom()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'taxi_cloakroom',
 	{
 		title    = _U('cloakroom_menu'),
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{ label = _U('wear_citizen'), value = 'wear_citizen' },
 			{ label = _U('wear_work'),    value = 'wear_work'}
@@ -181,7 +181,7 @@ function OpenVehicleSpawnerMenu()
 			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner',
 			{
 				title    = _U('spawn_veh'),
-				align    = 'top-left',
+				align    = 'bottom-right',
 				elements = elements
 			}, function(data, menu)
 				if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then
@@ -214,7 +214,7 @@ function OpenVehicleSpawnerMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'vehicle_spawner',
 		{
 			title		= _U('spawn_veh'),
-			align		= 'top-left',
+			align		= 'bottom-right',
 			elements	= Config.AuthorizedVehicles
 		}, function(data, menu)
 			if not ESX.Game.IsSpawnPointClear(Config.Zones.VehicleSpawnPoint.Pos, 5.0) then
@@ -272,7 +272,7 @@ function OpenTaxiActionsMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'taxi_actions',
 	{
 		title    = 'Taxi',
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = elements
 	}, function(data, menu)
 
@@ -301,7 +301,7 @@ function OpenMobileTaxiActionsMenu()
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'mobile_taxi_actions',
 	{
 		title    = 'Taxi',
-		align    = 'top-left',
+		align    = 'bottom-right',
 		elements = {
 			{ label = _U('billing'),   value = 'billing' },
 			{ label = _U('start_job'), value = 'start_job' }
@@ -392,7 +392,7 @@ function OpenGetStocksMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu',
 		{
 			title    = 'Taxi Stock',
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -444,7 +444,7 @@ function OpenPutStocksMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu',
 		{
 			title    = _U('inventory'),
-			align    = 'top-left',
+			align    = 'bottom-right',
 			elements = elements
 		}, function(data, menu)
 			local itemName = data.current.value
@@ -493,9 +493,10 @@ AddEventHandler('esx_taxijob:hasEnteredMarker', function(zone)
 	elseif zone == 'VehicleDeleter' then
 		local playerPed = PlayerPedId()
 		local vehicle   = GetVehiclePedIsIn(playerPed, false)
-
+        local networkid = NetworkGetNetworkIdFromEntity(vehicle)
 		if IsPedInAnyVehicle(playerPed, false) and GetPedInVehicleSeat(vehicle, -1) == playerPed then
 			CurrentAction     = 'delete_vehicle'
+			TriggerServerEvent('esx_jb_stopvehicledespawn:vehicleenteredingarage', networkid)
 			CurrentActionMsg  = _U('store_veh')
 			CurrentActionData = { vehicle = vehicle }
 		end
@@ -754,7 +755,7 @@ Citizen.CreateThread(function()
 		if CurrentAction and not IsDead then
 			ESX.ShowHelpNotification(CurrentActionMsg)
 
-			if IsControlJustReleased(0, Keys['E']) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+			if IsControlJustReleased(0, 26) and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
 				if CurrentAction == 'taxi_actions_menu' then
 					OpenTaxiActionsMenu()
 				elseif CurrentAction == 'cloakroom' then
@@ -768,8 +769,8 @@ Citizen.CreateThread(function()
 				CurrentAction = nil
 			end
 		end
-
-		if IsControlJustReleased(0, Keys['F6']) and IsInputDisabled(0) and not IsDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+        if ( IsControlJustReleased( 0, 167 ) or IsDisabledControlJustReleased( 0, 167 ) ) and GetLastInputMethod( 0 ) and not isDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
+		--if IsControlJustReleased(0, Keys['F6']) and IsInputDisabled(0) and not IsDead and Config.EnablePlayerManagement and ESX.PlayerData.job and ESX.PlayerData.job.name == 'taxi' then
 			OpenMobileTaxiActionsMenu()
 		end
 	end
@@ -781,4 +782,28 @@ end)
 
 AddEventHandler('playerSpawned', function(spawn)
 	IsDead = false
+end)
+
+-- Disable Controls
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(1)
+		local playerPed = PlayerPedId(-1)
+
+		if HasAlreadyEnteredMarker then
+			DisableControlAction(0, 24, true) -- Attack
+			DisableControlAction(0, 257, true) -- Attack 2
+			DisableControlAction(0, 25, true) -- Aim
+			DisableControlAction(0, 263, true) -- Melee Attack 1
+			DisableControlAction(0, 47, true)  -- Disable weapon
+			DisableControlAction(0, 264, true) -- Disable melee
+			DisableControlAction(0, 257, true) -- Disable melee
+			DisableControlAction(0, 140, true) -- Disable melee
+			DisableControlAction(0, 141, true) -- Disable melee
+			DisableControlAction(0, 142, true) -- Disable melee
+			DisableControlAction(0, 143, true) -- Disable melee
+		else
+			Citizen.Wait(500)
+		end
+	end
 end)
