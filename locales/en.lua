@@ -1,13 +1,13 @@
 Locales['en'] = {
   -- cloakroom
   ['cloakroom_menu'] = 'cloakroom',
-  ['cloakroom_prompt'] = 'press ~INPUT_CONTEXT~ to access the ~y~Cloakroom~s~.',
+  ['cloakroom_prompt'] = 'Press ~INPUT_LOOK_BEHIND~ to access the ~y~Cloakroom~s~.',
   ['wear_citizen'] = 'citizen wear',
   ['wear_work'] = 'taxi wear',
 
   -- garage
-  ['spawner_prompt'] = 'press ~INPUT_CONTEXT~ to access the ~y~Garage~s~.',
-  ['store_veh'] = 'press ~INPUT_CONTEXT~ to store the vehicle',
+  ['spawner_prompt'] = 'Press ~INPUT_LOOK_BEHIND~ to access the ~y~Garage~s~.',
+  ['store_veh'] = 'Press ~INPUT_LOOK_BEHIND~ to store the vehicle',
   ['spawn_veh'] = 'spawn vehicle',
   ['spawnpoint_blocked'] = 'there is a vehicle blocking the spawnpoint!',
   ['only_taxi'] = 'you can only store taxis.',
@@ -15,7 +15,7 @@ Locales['en'] = {
   ['taking_service'] = 'taking service: Taxi/Uber',
   ['full_service'] = 'full service: ',
   ['amount_invalid'] = 'amount invalid',
-  ['press_to_open'] = 'press ~INPUT_CONTEXT~ to access the menu',
+  ['press_to_open'] = 'Press ~INPUT_LOOK_BEHIND~ to access the menu',
   ['billing'] = 'billing',
   ['billing_sent'] = 'the bill has been registered!',
   ['invoice_amount'] = 'invoice amount',
