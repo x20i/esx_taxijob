@@ -2,14 +2,14 @@ Config                            = {}
 
 Config.DrawDistance               = 100.0
 
-Config.NPCJobEarnings             = {min = 300, max = 600}
+Config.NPCJobEarnings             = {min = 1000, max = 5000}
 Config.MinimumDistance            = 3000 -- Minimum NPC job destination distance from the pickup in GTA units, a higher number prevents nearby destionations.
 
 Config.MaxInService               = -1
-Config.EnablePlayerManagement     = false
+Config.EnablePlayerManagement     = true
 Config.EnableSocietyOwnedVehicles = false
 
-Config.Locale                     = 'fr'
+Config.Locale                     = 'en'
 
 Config.AuthorizedVehicles = {
 
@@ -59,97 +59,364 @@ Config.Zones = {
 
 }
 
+Config.Zones = {
+
+	VehicleSpawner = {
+		Pos   = {x = 915.039, y = -162.187, z = 74.5},
+		Size  = {x = 1.0, y = 1.0, z = 1.0},
+		Color = {r = 204, g = 204, b = 0},
+		Type  = 36, Rotate = true
+	},
+
+	VehicleSpawnPoint = {
+		Pos     = {x = 911.108, y = -177.867, z = 74.283},
+		Size    = {x = 1.5, y = 1.5, z = 1.0},
+		Type    = -1, Rotate = false,
+		Heading = 225.0
+	},
+
+	VehicleDeleter = {
+		Pos   = {x = 908.317, y = -183.070, z = 73.201},
+		Size  = {x = 3.0, y = 3.0, z = 0.25},
+		Color = {r = 255, g = 0, b = 0},
+		Type  = 1, Rotate = false
+	},
+
+	TaxiActions = {
+		Pos   = {x = 903.32, y = -170.55, z = 74.0},
+		Size  = {x = 1.0, y = 1.0, z = 1.0},
+		Color = {r = 204, g = 204, b = 0},
+		Type  = 20, Rotate = true
+	},
+
+	Cloakroom = {
+		Pos     = {x = 894.88, y = -180.23, z = 74.5},
+		Size    = {x = 1.0, y = 1.0, z = 1.0},
+		Color   = {r = 204, g = 204, b = 0},
+		Type    = 21, Rotate = true
+	}
+
+}
+
 Config.JobLocations = {
-	{x = 293.476,  y = -590.163, z = 42.7371},
-	{x = 253.404,  y = -375.86, z = 44.0819},
-	{x = 120.808,  y = -300.416, z = 45.1399},
-	{x = -38.4132, y = -381.576, z = 38.3456},
-	{x = -107.442, y = -614.377, z = 35.6703},
-	{x = -252.292, y = -856.474, z = 30.5626},
-	{x = -236.138, y = -988.382, z = 28.7749},
-	{x = -276.989, y = -1061.18, z = 25.6853},
-	{x = -576.451, y = -998.989, z = 21.785},
-	{x = -602.798, y = -952.63, z = 21.6353},
-	{x = -790.653, y = -961.855, z = 14.8932},
-	{x = -912.588, y = -864.756, z = 15.0057},
-	{x = -1069.77, y = -792.513, z = 18.8075},
-	{x = -1306.94, y = -854.085, z = 15.0959},
-	{x = -1468.51, y = -681.363, z = 26.178},
-	{x = -1380.89, y = -452.7, z = 34.0843},
-	{x = -1326.35, y = -394.81, z = 36.0632},
-	{x = -1383.68, y = -269.985, z = 42.4878},
-	{x = -1679.61, y = -457.339, z = 39.4048},
-	{x = -1812.45, y = -416.917, z = 43.6734},
-	{x = -2043.64, y = -268.291, z = 22.9927},
-	{x = -2186.45, y = -421.595, z = 12.6776},
-	{x = -1862.08, y = -586.528, z = 11.1747},
-	{x = -1859.5,  y = -617.563, z = 10.8788},
-	{x = -1634.95, y = -988.302, z = 12.6241},
-	{x = -1283.99, y = -1154.16, z = 5.30998},
-	{x = -1126.47, y = -1338.08, z = 4.63434},
-	{x = -867.907, y = -1159.67, z = 5.00795},
-	{x = -847.55,  y = -1141.38, z = 6.27591},
-	{x = -722.625, y = -1144.6, z = 10.2176},
-	{x = -575.503, y = -318.446, z = 34.5273},
-	{x = -592.309, y = -224.853, z = 36.1209},
-	{x = -559.594, y = -162.873, z = 37.7547},
-	{x = -534.992, y = -65.6695, z = 40.634},
-	{x = -758.234, y = -36.6906, z = 37.2911},
-	{x = -1375.88, y = 20.9516, z = 53.2255},
-	{x = -1320.25, y = -128.018, z = 48.097},
-	{x = -1285.71, y = 294.287, z = 64.4619},
-	{x = -1245.67, y = 386.533, z = 75.0908},
-	{x = -760.355, y = 285.015, z = 85.0667},
-	{x = -626.786, y = 254.146, z = 81.0964},
-	{x = -563.609, y = 267.962, z = 82.5116},
-	{x = -486.806, y = 271.977, z = 82.8187},
-	{x = 88.295,   y = 250.867, z = 108.188},
-	{x = 234.087,  y = 344.678, z = 105.018},
-	{x = 434.963,  y = 96.707, z = 99.1713},
-	{x = 482.617,  y = -142.533, z = 58.1936},
-	{x = 762.651,  y = -786.55, z = 25.8915},
-	{x = 809.06,   y = -1290.8, z = 25.7946},
-	{x = 490.819,  y = -1751.37, z = 28.0987},
-	{x = 432.351,  y = -1856.11, z = 27.0352},
-	{x = 164.348,  y = -1734.54, z = 28.8982},
-	{x = -57.6909, y = -1501.4, z = 31.1084},
-	{x = 52.2241,  y = -1566.65, z = 29.006},
-	{x = 310.222,  y = -1376.76, z = 31.4442},
-	{x = 181.967,  y = -1332.79, z = 28.8773},
-	{x = -74.6091, y = -1100.64, z = 25.738},
-	{x = -887.045, y = -2187.46, z = 8.13248},
-	{x = -749.584, y = -2296.59, z = 12.4627},
-	{x = -1064.83, y = -2560.66, z = 19.6811},
-	{x = -1033.44, y = -2730.24, z = 19.6868},
-	{x = -1018.67, y = -2732, z = 13.2687},
-	{x = 797.354,  y = -174.423, z = 72.708},
-	{x = 508.156,  y = -117.908, z = 60.78},
-	{x = 159.458,  y = -27.555, z = 67.38},
-	{x = -36.382,  y = -106.912, z = 56.982},
-	{x = -355.801, y = -270.404, z = 33.011},
-	{x = -831.196, y = -76.871, z = 37.323},
-	{x = -1038.707, y = -214.593, z = 37},
-	{x = 1918.448, y = 3691.41, z = 32.261},
-	{x = 1820.217, y = 3697.115, z = 33.493},
-	{x = 1619.323, y = 3827.162, z = 34.482},
-	{x = 1418.628, y = 3602.243, z = 34.511},
-	{x = 1944.858, y = 3856.252, z = 31.741},
-	{x = 2285.278, y = 3839.444, z = 34.023},
-	{x = 2760.945, y = 3387.813, z = 55.659},
-	{x = 1952.819, y = 2627.731, z = 45.368},
-	{x = 1051.414, y = 474.833, z = 93.653},
-	{x = 866.393,  y = 17.635, z = 78.654},
-	{x = 318.985,  y = 167.41, z = 103.335},
-	{x = 88.836,   y = 254.054, z = 108.236},
-	{x = -44.852,  y = 70.414, z = 72.437},
-	{x = -115.496, y = 84.333, z = 70.792},
-	{x = -384.806, y = 226.868, z = 83.548},
-	{x = -578.669, y = 139.085, z = 61.337},
-	{x = -651.334, y = -584.879, z = 34.116},
-	{x = -571.847, y = -1195.648, z = 17.869},
-	{x = -1513.271, y = -670.039, z = 28.362},
-	{x = -1297.484, y = -654.913, z = 26.123},
-	{x = -1645.546, y = 144.571, z = 61.664},
-	{x = -1160.618, y = 744.418, z = 154.571},
-	{x = -798.09, y = 831.699, z = 204.351},
+	-- 1022 algonquin blvd
+	{x = 1701.63, y = 3752.09, z = 34.13},
+	-- 1016 algonquin blvd (market)
+	{x = 1396.46, y = 3598.2200000001, z = 34.91},
+	-- 1029 alhambra drive(police station) 
+	{x = 1855.77, y = 3681.03, z = 33.9},
+	-- 1036 alhambra drive(super market)
+	{x = 1965.78, y = 3738.41, z = 32.19},
+	-- 1036 alhambra drive (gaz_station)
+	{x = 2010.41, y = 3785.24, z = 32.18},
+	-- 1036 niland ave (garage|public)
+	{x = 1946.39, y = 3765.6800000001, z = 32.2},
+	-- 1020 panorama drive(garage|public)
+	{x = 1739.97, y = 3290.4199999999, z = 41.13},
+	-- 1020 panorama drive (garage|pound)
+	{x = 1770.33, y = 3338.69, z = 41.35},
+	--	949 panorama drive (bar)
+	{x = 1990.53, y = 3059.47, z = 47.05},
+	-- 957 senora_ freeway (market+gaz_station)
+	{x = 2685.79, y = 3279.0700000001, z = 55.24},
+	-- 940 route_68 (truck dealer)
+	{x = 1246.22, y = 2699.04, z = 38.0},
+	-- 940 route_68 (cloth_market)
+	{x = 1199.03, y = 2699.8, z = 37.96},
+	-- 940 route_68 (bank)
+	{x = 1177.54, y = 2700.02, z = 37.98},
+	-- 940 route_68 (market)
+	{x = 1159.44, y = 2699.71, z = 38.18},
+	-- 941 route_68 (gaz_station)
+	{x = 1219.79, y = 2671.08, z = 37.68},
+	-- 937 route_68 (gaz_station)
+	{x = 1017.41, y = 2682.19, z = 39.57},
+	-- 930 route_68 (cloth_market)
+	{x = 1216.88, y = 2672.47, z = 24.24},
+	-- 928 route_68 (market)
+	{x = 540.77, y = 2679.39, z = 42.24},
+	-- 925 route_68 (customer 1)
+	{x = 412.44, y = 2662.3, z = 43.49, h = 278.5},
+	-- 925 route_68 (customer 2)
+	{x = 480.85, y = 2673.13, z = 42.52},
+	-- 920 senora_roadroad
+	{x = 284.69, y = 2615.54, z = 43.98},
+	-- 916 route_68 (gaz_station)
+	{x = 284.69, y = 2615.54, z = 43.98},
+	-- 957 senora_ freeway (marketgaz_station)
+	{x = 2708.48, y = 3278.4, z = 54.77},
+	-- 1026 grand_senora_desert
+	{x = 1738.2, y = 3849.57, z = 34.78},
+	-- 3025 great_ocean high way
+	{x = 206.16, y = 6578.17, z = 31.63},
+	-- 3024 paleto  blvd
+	{x = -0.45, y = 6520.5, z = 31.46},
+	-- 3019 paleto blvd (bank+atm)
+	{x = -91.319999999998, y = 6457.6900000001, z = 31.45},
+	-- 3016 paleto blvd (gaz_station)
+	{x = -109.12, y = 6411.28, z = 31.43},
+	-- 3016 paleto blvd (atm)
+	{x = -145.07, y = 6377.5200000001, z = 31.76},
+	-- 3007 route_1 (gun_market)
+	{x = -321.29, y = 6072.8, z = 31.29},
+	-- 3030 great_ocean high way(market+gaz_station+atm)
+	{x = 1713.04, y = 6392.26, z = 33.25},   
+	-- 2013 grappeseed main-street (market+gaz_station)
+	{x = 1701.27, y = 4935.9, z = 42.07},
+	-- 2014 grappeseed main-street(atm+cloth_market)
+	{x = 1685.55, y = 4817.42, z = 42.0, h = 63.5},
+	-- 2001 great_ocean high way(garage|public)
+	{x = -2228.28, y = 4245.08, z = 46.69, h = 343.5},
+	--1001 route_68(gaz_station+garage|public)
+	{x = -2534.63, y = 2320.72, z = 33.42},
+	--960 segnora_ way(gaz_station+atm)
+	{x = -0.96, y = -0.33, z = -71.029999999999},
+	--1005 route_68 Great_chapparal 
+	{x = -3236.03, y = 1011.88, z = 11.5},
+	-- 905 barbanero_road(atm+market)
+	{x = -3128.83, y = 1123.33, z = 20.890},
+	-- 907 great_ocean high way route_1(atm)
+	{x = -3236.03, y = 1011.88, z = 11.5},
+	-- 908 great_ocean high way route_1(cloth_market)
+	{x = -3138.05, y = 1055.52, z = 20.94},
+	-- 817 north_rockford_drive(atm+gaz_station+market)
+	{x = -1816.59, y = 790.71, z = 138.11},
+	-- 803-804 great_ocean high way (atm+market)
+	{x = -3035.26, y = 588.01, z = 7.94},
+	-- 814 great_ocean high way
+	{x = -2969.68, y = 477.62, z = 15.56},
+	--815 great_ocean high way
+	{2975.65, y = 395.1, z = 15.14},
+	-- 402 polimino_ freeway(gun_market)
+	{x = 2576.23, y = 307.71, z = 108.67},
+	-- 402 polimino  freeway(gaz_station)
+	{x = 2600.23, y = 370.97, z = 108.61},
+	-- 886 hillcrest_ave (house)
+	{x = -855.35, y = 702.9, z = 149.35},
+	-- 887-888 hillcrest_ave (house)
+	{x = -684.87, y = 601.18, z = 144.39},
+	-- 891 hillcrest_ave(house)
+	{x = -178.42, y = 504.29, z = 136.23},
+	-- 557 wild_oats_drive(house)
+	{x = 128.34, y = 567.42, z = 184.91},
+	-- 572 whipsymood_drive(house)
+	{x = 349.06, y = 442.47, z = 147.48},
+	-- 589 conker_ave(house)
+	{x = 372.44, y = 432.23, z = 144.48},
+	--589 conker_ave(house)
+	{x = -774.61, y = 304.3, z = 85.7},
+	-- 501 mo_milton_drive(house)
+	{x = -564.56, y = 270.18, z = 83.01},
+	-- 513 eclipse_blvd(bar)
+	{x = 245.81, y = 202.69, z = 105.18},
+	-- 575 vinewood_blvd(atm+bank)
+	{x = 289.84, y = 146.59, z = 104.11},
+	-- 576 vinewood_blvd(atm)
+	{x = -642.43, y = 33.03, z = 40.93},
+	-- 517 strange way drive(house)
+	{x = -619.94, y = 6.2, z = 41.68, h = 315.5},
+	-- 517 blvd del_perro(house)
+	{x = -1408.44, y = -98.74, z = 52.43},
+	-- 652 cougar ave(atm)
+	{x = -718.38, y = -157.57, z = 36.99},
+	-- 696 portola drive(cloth_market)
+	{x = -318.74, y = -173.27, z = 39.41},
+	-- 529 Carcer_ way(los-santos-costoms+mechanic)
+	{x = 239.17, y = -52.08, z = 69.53},
+	-- 578 spanish ave(gun_market)
+	{x = -1402.76, y = -505.53, z = 32.34},
+	-- 636 prosperity street(house)
+	{x = -1428.28, y = -527.71, z = 32.38},
+	-- 627 prosperity street(house)
+	{x = -1591.49, y = -547.94, z = 35.07},
+	-- 618 bay_city ave(house)
+	{x = -1591.49, y = -547.94, z = 35.07},
+	-- 628 marathon ave(bar)
+	{x = -1391.44, y = -585.14, z = 30.23},
+	-- 665 movie_star  way(house)
+	{x = -1300.81, y = -701.94, z = 24.7},
+	-- 630 del_perro freeway(atm)
+	{x = 1194.16, y = -343.88, z = 69.35},
+	-- 411 mirror_park blvd(atm+gaz_station+market)
+	{x = 1165.03, y = -486.62, z = 65.56,},
+	-- 426 mirror_park blvd(atm+gaz_station+market)
+	{x = -971.68, y = -1255.93, z = 5.2},
+	-- 338 polimino ave (garage|public)
+	{x = -661.4, y = -1373.28, z = 9.9},
+	-- 349 dutch london street(garage|pound)
+	{x = -532.22, y = -1186.56, z = 18.29},
+	-- 375 innnocent blvd(gaz_station)
+	{x = -2107.7, y = -343.68, z = 13.11},
+	-- 602 del_perro freeway(gaz_station)
+	{x = -1883.2, y = -372.92, z = 48.8},
+	-- 613 playa vista(garage|public)
+	{x = -1492.85, y = -386.72, z = 39.77},
+	-- 635 prosperity street(market)
+	{x = -1447.88, y = -287.86, z = 46.13},
+	-- 644 north_rockford_drive(gaz_station)
+	{x = -1290.38, y = -402.29, z = 35.94},
+	-- 646 morningwood blvd(gun_market)
+	{x = -713.94, y = -947.04, z = 18.91},
+	-- 366 ginger street(gaz_station+market+gun_market)
+	{x = -800.01, y = -1092.53, z = 10.94},
+	-- 354 south_rockford drive (cloth_market)
+	{x = -52.24, y = -582.84, z = 36.38},
+	-- 395 alta street
+	{x = -339.58, y = -673.65, z = 31.64},
+	-- 381 san_andreas ave
+	{x = -242.41, y = -990.63, z = 28.71},
+	-- 382 alta street
+	{x = -62.83, y = -1093.57, z = 25.91, h = 336.5},
+	-- 200 power street
+	{x = 27.77, y = -1119.5, z = 28.7, h = 131.5},
+	-- 200 elgin ave
+	{x = 147.35, y = -1034.94, z = 28.76},
+	-- 206 vespucci blvd
+	{x = 285.15, y = -1065.84, z = 28.84},
+	-- 211 fantastic place
+	{x = 474.33, y = -1122.53, z = 29.39},
+	-- 218 adam's_apple blvd
+	{x = 409.0, y = -970.3, z = 29.41},
+	-- 217 sinner street
+	{x = 815.06, y = -1014.4, z = 26.18},
+	-- 230 vespucci blvd
+	{x = 1144.89, y = -976.7, z = 46.49},
+	-- el_rancho blvd
+	{x = 24.59, y = -1353.48, z = 29.4},
+	-- 125 innnocent blvd
+	{x = 86.8, y = -1388.18, z = 29.32},
+	-- 134 innnocent blvd
+	{x = 93.03, y = -1312.41, z = 29.36},
+	-- 133 elgin ave
+	{x = 277.13, y = -1288.16, z = 29.44},
+	-- 139 capital blvd
+	{x = 268.05, y = -1398.51, z = 30.24},
+	-- 140 crusade_road
+	{x = 1215.07, y = -1409.83, z = 35.46},
+	-- 177 el_rancho blvd 
+	{x = -59.86, y = -1788.16, z = 27.23},
+	-- 110-120 grove street
+	{x = 421.56, y = -1622.85, z = 28.74},
+	-- 143 innnocent blvd
+	{x = 323.28, y = -1696.01, z = 28.76},
+	-- 143 mcdonald street
+	{x = 790.99, y = -2126.04, z = 29.36},
+	-- 60 popular street	
+	{x = 415.35, y = -2159.72, z = 16.85},
+	-- 74 dutch_london street
+	{x = 751.22, y = -2981.94, z = 5.99},
+	-- 12 buccaneer way
+	{x = -908.81, y = -2668.56, z = 13.63},
+	-- 98 new_empire way
+	{x = -152.98, y = -1724.38, z = 29.43},
+	-- 109 forum drive
+	{x = -24.5, y = -1722.5, z = 29.28},
+	-- 121 davis ave
+	{x = 121.43, y = -1754.16, z = 28.44},
+	-- 121 carson ave
+	{x = 145.44, y = -1817.78, z = 27.02},
+	-- 131 brouge ave
+	{x = 144.83, y = -1872.16, z = 23.35},
+	-- 131 covenant ave
+	{x = 223.1, y = -1839.73, z = 26.37},
+	-- 131 carson ave
+	{x = 133.72, y = -1763.83, z = 28.44},
+	-- 121 carson ave
+	{x = 90.77, y = -1682.23, z = 28.6},
+	-- 129 carson ave
+	{x = 1.93, y = -1605.93, z = 28.58},
+	-- 128 carson ave
+	{x = -87.95, y = -1531.01, z = 32.93},
+	-- 117 carson ave
+	{x = -175.6, y = -1458.4, z = 30.98},
+	-- 103 carson ave
+	{x = -161.23, y = -1518.82, z = 33.1},
+	-- 106 carson ave
+	{x = 8.02, y = -1659.44, z = 28.64},
+	-- 119 carson ave
+	{x = 225.7, y = -1640.68, z = 28.6},
+	-- 136 mcdonald street
+	{x = 682.81, y = 3510.94, z = 33.4},
+	-- 1011 grand_senora_desert
+	{x = 917.17, y = 3547.48, z = 33.21},
+	-- 1012 marina_drive
+	{x = 1418.8, y = 3684.61, z = 33.16},
+	-- 1016 marina_drive
+	{x = 1526.9, y = 3733.86, z = 33.77},
+	-- 1018 marina_drive
+	{x = 1649.71, y = 3831.36, z = 34.2},
+	-- 1021 marina_drive
+	{x = 1688.9, y = 3871.02, z = 34.1},
+	-- 1026 marina_drive
+	{x = 1804.3, y = 3933.32, z = 33.07},
+	-- 1030 marina_drive
+	{x = 1941.44, y = 3900.73, z = 31.59},
+	-- 1034 marina_drive
+	{x = 1941.44, y = 3900.73, z = 31.59},
+	-- 1036 marina_drive
+	{x = 1975.13, y = 3854.52, z = 31.49},
+	-- 1035 marina_drive
+	{x = 1938.85, y = 3880.48, z = 31.56},
+	-- 1034 algonquin_blvd
+	{x = 1755.56, y = 3772.99, z = 33.08},
+	-- 1027 algonquin_blvd
+	{x = 1494.58, y = 3630.24, z = 34.12},
+	-- 1018 algonquin_blvd
+	{x = 1766.42, y = 3664.97, z = 33.61},
+	-- 1025 zancudo_ave
+	{x = 1820.53, y = 3697.21, z = 33.2},
+	-- 1029 zancudo_ave
+	{x = 1916.85, y = 3753.61, z = 31.57},
+	-- 1033 zancudo_ave
+	{x = 1951.1, y = 3772.85, z = 31.51},
+	-- 1036 zancudo_ave
+	{x = 1699.38, y = 3582.78, z = 34.84},
+	-- 1025 alhambra_drive
+	{x = -391.86, y = 6131.28, z = 30.7},
+	-- 3007 paleto_blvd
+	{x = -258.6, y = 6262.72, z = 30.74},
+	-- 3012 paleto_blvd
+	{x = 59.73, y = 6460.61, z = 30.6,},
+	-- 3020 route_1
+	{x = 59.73, y = 6460.61, z = 30.6},
+	-- route_1
+	{x = -428.53, y = 6034.77, z = 31.49},
+	-- 3005 route_1
+	{x = 1592.22, y = 6427.14, z = 24.88},
+	-- segnora_freeway
+	{x = 2464.57, y = 4062.87, z = 37.22},
+	-- 1041 east_joshua_road
+	{x = 2509.54, y = 4111.58, z = 37.79},
+	-- 1042 east_joshua_road
+	{x = 2583.82, y = 4272.34, z = 41.45},
+	-- 1044 east_joshua_road
+	{x = 2682.62, y = 4337.84, z = 45.26},
+	-- 1047 east_joshua_road
+	{x = 2749.29, y = 4411.57, z = 47.89},
+	-- 1048 east_joshua_road
+	{x = 2653.13, y = 4313.05, z = 43.81},
+	-- 1045-1047 east_joshua_road
+	{x = 2548.2, y = 4680.86, z = 33.26},
+	-- 2026 grappeseed_ave
+	{x = -783.14, y = 5572.36, z = 33.22},
+	-- 3003 procopio_promenade
+	{x = -695.99, y = 5822.51, z = 16.68},
+	-- 3004 procopio_promenade
+	{x = -500.01, y = 6277.81, z = 11.81},
+	-- 3009 procopio_promenade
+	{x = -436.09, y = 6363.08, z = 12.99},
+	-- 3009 procopio_promenade
+	{x = -209.23, y = 6537.04, z = 10.85},
+	-- 3018 procopio_promenade
+	{x = 303.08, y = 6586.79, z = 29.36},
+	-- 3026 route_1
+	{x = 73.91, y = 6416.81, z = 31.1},
+	-- 3021 route_1
+	{x = -59.97, y = 6291.67, z = 31.12},
+	-- 3017-3013 route_1
+	{x = -167.14, y = 6192.04, z = 31.07},
+	-- 3017 route_1
+	{x = -865.07, y = 5418.28, z = 34.83},
+	-- 3002 route_1
+	{x = -1513.89, y = 4963.98, z = 62.17},
 }
